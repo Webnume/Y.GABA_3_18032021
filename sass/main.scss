@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+$font-logo-title :    'Shrikhand', cursive;
+$text :    'Roboto', sans-serif;
+$primary-color: #9356DC;
+$second-color : #FF79DA;
+$third-color : #99E2D0;
+$black-color:#000;
+$white-color:#fff;
+$background-color-1: #eaeaea;
+$background-color-2: #f6f6f6;
+$grey-footer:#353535;
+
+@mixin box-flex-format($direction: row){
+  display:flex;
+  flex-direction: $direction;
+  justify-content:  center;
+  align-items: center;
+  width: 100%;
+  }
+
+
+@mixin box-shadow ($alpha: 0.5) {
+  box-shadow: 0px 0.5px 5px rgba($color: #000000, $alpha:$alpha); 
+}
+
+body {
+  font: 100% $text;
+  color: $black-color;
+  min-width: 375px;
+  margin: 0 auto;
+  @include box-flex-format(column);
+  
+}
+main{
+  width: 100%;
+}
+
+header {
+  height: 64px;  
+  z-index: 1;
+  @include box-shadow(0.3);
+  @include box-flex-format(column);
+  & svg {
+    width: 160px;
+    padding-top: 1rem;
+    & path{
+    fill: $black-color;
+    }
+  }
+}
+
+.localisation {
+  @include box-flex-format(column);  
+  &__town{
+    @include box-flex-format;
+    font-weight: bolder;
+    height: 65px;
+    background: $background-color-1;
+    align-items: center;
+    img{
+    width: 12px;
+    padding-right: 1rem;  
+    margin-left: -21px;    
+    }
+  }
+  &__exploreRestaurants{
+    @include box-flex-format(column);
+    height: 287px;
+    background-color: $background-color-2;
+    h1{
+      margin-top : 0;
+      padding: 0 3rem;
+      text-align: center;
+    }
+    p{
+      margin-top : 0;
+      text-align: center;
+      font-size: large;
+    }
+    button{
+      @include box-shadow();
+      height: 50px;
+      width: 220px;
+      background: linear-gradient(355deg, $primary-color, $second-color);
+      border-style:none;
+      border-radius: 5rem;
+      color: $white-color;
+      font-size: 0.95rem;
+      font-weight: bolder;
+      margin-top: 1rem;
+      transition: All 330ms ease-in-out ;
+
+      &:hover{
+        transform: scale(1.2);
+        @include box-shadow(1);
+      }
+    }    
+  }
+}
+
+.presentation{
+  @include box-flex-format(column);
+  align-items: unset;
+  height: 440px;  
+  & h2{
+    padding-left: 1.4rem;
+    margin: 0;
+  }
+  &__list {
+    list-style: none;
+    > li {
+      @include box-shadow(0.2);
+      @include box-flex-format();
+      width: auto;
+      background: $background-color-2;
+      border-radius: 1rem;
+      counter-increment: gradient-counter;
+      margin-top: 1rem;
+      height: 75px;
+      margin-right: 1rem;
+      position: relative;
+      font-weight: 700;
+      &::before{
+        background: $primary-color;
+        border-radius: 50%;
+        height: 1.5rem;
+        width:1.5rem;
+        left: -1rem;
+        overflow: hidden;
+        position: absolute;
+        align-items: center;
+        content: counter(gradient-counter);
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+        color: $white-color;
+        font-size: smaller;
+      }
+      & img{
+        height: 1.3rem;
+        width: 1.1rem;
+        position: absolute;
+        left: 2rem;
+      }
+    }  
+  }
+}
+
+
+
+
+.restaurant{
+  @include box-flex-format(column);
+  height: 1226px;  
+  background-color: $background-color-2;
+  & h2{
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+  &__card{
+    border-radius: 1rem;
+    @include box-shadow(0.1);
+    height: 250px;
+    background-color: white;
+    margin: 0.5rem 1rem;
+    & img{
+      object-fit: cover;
+      border-radius: 1rem 1rem 0 0;
+      width: 100%;
+      height: 70%;
+      object-position: 0 62%;
+    }
+    & img:not(.restaurant :nth-child(3) img){      
+      object-position: 0 108%;
+    }
+    &--bottomDescription{
+      display: grid;
+      grid-template-columns: 5fr 1fr;
+      padding-top: 0.7rem;
+      padding-left: 1rem;
+      & img{
+        width: 1.5rem;
+        height: 100%;
+      }
+      & h3{
+        margin:  0;
+      }
+      & span{
+        order: 1
+      }      
+    }
+  }
+}
+
+footer{
+  @include box-flex-format(column);
+  justify-content: unset;
+  align-items: unset;  
+  height: 195px;  
+  background-color: $grey-footer;
+  color: $white-color;
+  & svg {
+    width: 7rem;
+    padding: 1rem 1.5rem;
+    & path{
+    fill:$white-color;
+    }
+  }
+  & ul{   
+    list-style: none;
+    margin: 0;
+    padding-left: 1.5rem;
+    line-height: 1.5rem;
+    & li:nth-child(1) img{
+        width: 0.7rem;
+        padding-right: 0.5rem;
+    }& li:nth-child(2) img{
+      width: 0.9rem;
+      padding-right: 0.3rem;
+  }
+  }
+}
+
+
