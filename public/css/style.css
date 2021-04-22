@@ -141,6 +141,9 @@ header svg path {
   position: relative;
   font-weight: 700;
 }
+.presentation__list > li:last-child {
+  background-color: #f5edff;
+}
 .presentation__list > li::before {
   background: #9356DC;
   border-radius: 50%;
@@ -206,6 +209,26 @@ header svg path {
 }
 .restaurant__card--bottomDescription svg:hover path {
   fill: #72a200;
+}
+.restaurant__card--bottomDescription .favHeart {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.restaurant__card--bottomDescription .favHeart > .far, .restaurant__card--bottomDescription .favHeart .fas {
+  position: absolute;
+}
+.restaurant__card--bottomDescription .favHeart .fas {
+  opacity: 0;
+}
+.restaurant__card--bottomDescription .favHeart:hover .far {
+  opacity: 0.5;
+}
+.restaurant__card--bottomDescription .favHeart:hover .far + .fas {
+  transition: opacity 0.3s ease-out;
+  opacity: 1;
+  color: #9356DC;
 }
 .restaurant__card--bottomDescription h3 {
   margin: 0;

@@ -10,6 +10,7 @@ $black-color:#000;
 $white-color:#fff;
 $background-color-1: #eaeaea;
 $background-color-2: #f6f6f6;
+$background-color-3: #f5edff;
 $grey-footer:#353535;
 
 @mixin box-flex-format($direction: row){
@@ -127,7 +128,7 @@ header {
   }
   &__list {
     list-style: none;
-    > li {
+    > li{
       @include box-shadow(0.2);
       @include box-flex-format();
       width: auto;
@@ -139,6 +140,9 @@ header {
       margin-right: 1rem;
       position: relative;
       font-weight: 700;
+      &:last-child{
+        background-color: $background-color-3;
+      }
       &::before{
         background: $primary-color;
         border-radius: 50%;
@@ -203,7 +207,27 @@ header {
         &:hover path {
           fill: #72a200;
         }
-      }
+      }      
+      & .favHeart {  
+        font-size: 1.5rem;
+        width: 1.5rem;
+        position: relative;
+        cursor: pointer;
+        & > .far,.fas {
+          position: absolute;
+        }
+        & .fas{
+          opacity: 0;
+        }
+        &:hover .far{
+          opacity: 0.5;
+          & + .fas{        
+        transition: opacity 0.3s ease-out;
+            opacity: 1;
+            color: $primary-color;
+          }          
+        } 
+      }      
       & h3{
         margin:  0;
       }
@@ -242,5 +266,3 @@ footer{
   }
   }
 }
-
-
