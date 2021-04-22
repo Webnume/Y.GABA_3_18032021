@@ -12,6 +12,20 @@ body {
   width: 100%;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+}
+a:hover {
+  color: #9356DC;
+}
+a:active {
+  color: #FF79DA;
+}
+
 main {
   width: 100%;
 }
@@ -187,9 +201,11 @@ header svg path {
   padding-top: 0.7rem;
   padding-left: 1rem;
 }
-.restaurant__card--bottomDescription img {
+.restaurant__card--bottomDescription svg {
   width: 1.5rem;
-  height: 100%;
+}
+.restaurant__card--bottomDescription svg:hover path {
+  fill: #72a200;
 }
 .restaurant__card--bottomDescription h3 {
   margin: 0;
