@@ -66,9 +66,25 @@ main{
                     border-radius: 0.7rem;
                     padding: 0.9rem;
                     animation: animBox 0.8s ease-in-out both;
+                            overflow: hidden;
                     @for $i from 1 through 3 {
                         &--#{$i} {
-                            animation-delay: 0.3s + $i/4;
+                            animation-delay: 0.2s + $i/8;
+                            position: relative;
+
+
+                            &:hover .check {
+                                transform: translate(-100px, 0);
+                            }
+                            &:hover .price {
+                                transform: translate(-100px, 0);
+                            }
+                            &:hover .description h4 {
+                                width: 60%;
+                            }
+                            &:hover .fas {
+                                transform: rotate(360deg);
+                            }
                         }
                     }
                     & h3{
@@ -80,13 +96,38 @@ main{
                         & h4{
                             font-weight: 400;
                             margin: 0;
-                        }
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            width: 85%;
+                            transition: width 330ms ease-in-out;
+                            }
                         & .price{
                             font-weight: bold;
+                            transition: transform 330ms ease-in-out;
                         }
                                                 
                     }
+                    
+                    
                 }
+                & .check{
+                        @include box-flex-format;
+                        background-color: $third-color;
+                        position: absolute;
+                        top :0;
+                        right: -100px;
+                        height: 100%;
+                        width: 100px;
+                        transition: transform 330ms ease-in-out;
+                        & .fas{
+                            color: $white-color;
+                            font-size: 2rem;
+                            transition: transform 330ms ease-in-out;
+                        }
+                        
+                     
+                    }
             }
             
         }                         

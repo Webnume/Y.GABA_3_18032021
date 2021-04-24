@@ -395,15 +395,55 @@ main .container .dishes .dishes_type .dishBox {
   border-radius: 0.7rem;
   padding: 0.9rem;
   animation: animBox 0.8s ease-in-out both;
+  overflow: hidden;
 }
 main .container .dishes .dishes_type .dishBox--1 {
-  animation-delay: 0.55s;
+  animation-delay: 0.325s;
+  position: relative;
+}
+main .container .dishes .dishes_type .dishBox--1:hover .check {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--1:hover .price {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--1:hover .description h4 {
+  width: 60%;
+}
+main .container .dishes .dishes_type .dishBox--1:hover .fas {
+  transform: rotate(360deg);
 }
 main .container .dishes .dishes_type .dishBox--2 {
-  animation-delay: 0.8s;
+  animation-delay: 0.45s;
+  position: relative;
+}
+main .container .dishes .dishes_type .dishBox--2:hover .check {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--2:hover .price {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--2:hover .description h4 {
+  width: 60%;
+}
+main .container .dishes .dishes_type .dishBox--2:hover .fas {
+  transform: rotate(360deg);
 }
 main .container .dishes .dishes_type .dishBox--3 {
-  animation-delay: 1.05s;
+  animation-delay: 0.575s;
+  position: relative;
+}
+main .container .dishes .dishes_type .dishBox--3:hover .check {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--3:hover .price {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--3:hover .description h4 {
+  width: 60%;
+}
+main .container .dishes .dishes_type .dishBox--3:hover .fas {
+  transform: rotate(360deg);
 }
 main .container .dishes .dishes_type .dishBox h3 {
   margin: 0.2rem 0;
@@ -419,9 +459,34 @@ main .container .dishes .dishes_type .dishBox .description {
 main .container .dishes .dishes_type .dishBox .description h4 {
   font-weight: 400;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 85%;
+  transition: width 330ms ease-in-out;
 }
 main .container .dishes .dishes_type .dishBox .description .price {
   font-weight: bold;
+  transition: transform 330ms ease-in-out;
+}
+main .container .dishes .dishes_type .check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #99E2D0;
+  position: absolute;
+  top: 0;
+  right: -100px;
+  height: 100%;
+  width: 100px;
+  transition: transform 330ms ease-in-out;
+}
+main .container .dishes .dishes_type .check .fas {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 330ms ease-in-out;
 }
 
 @keyframes animBox {
