@@ -1,0 +1,164 @@
+.localisation {
+    @include box-flex-format(column);  
+    &__town{
+      @include box-flex-format;
+      font-weight: bolder;
+      height: 65px;
+      background: $background-color-1;
+      align-items: center;
+      img{
+      width: 12px;
+      padding-right: 1rem;  
+      margin-left: -21px;    
+      }
+    }
+    &__exploreRestaurants{
+      @include box-flex-format(column);
+      height: 287px;
+      background-color: $background-color-2;
+      h1{
+        margin-top : 0;
+        padding: 0 3rem;
+        text-align: center;
+      }
+      p{
+        margin-top : 0;
+        text-align: center;
+        font-size: large;
+      }
+      button{
+        @include box-shadow();
+        height: 50px;
+        width: 220px;
+        background: linear-gradient(355deg, $primary-color, $second-color);
+        border-style:none;
+        border-radius: 5rem;
+        color: $white-color;
+        font-size: 0.95rem;
+        font-weight: bolder;
+        margin-top: 1rem;
+        transition: All 330ms ease-in-out ;
+  
+        &:hover{
+          transform: scale(1.2);
+          @include box-shadow(1);
+        }
+      }    
+    }
+}
+  
+.presentation{
+    @include box-flex-format(column);
+    align-items: unset;
+    height: 440px;  
+    & h2{
+        padding-left: 1.4rem;
+        margin: 0;
+        }
+    &__list {
+        list-style: none;
+        > li{
+            @include box-shadow(0.2);
+            @include box-flex-format();
+            width: auto;
+            background: $background-color-2;
+            border-radius: 1rem;
+            counter-increment: gradient-counter;
+            margin-top: 1rem;
+            height: 75px;
+            margin-right: 1rem;
+            position: relative;
+            font-weight: 700;
+            &:last-child{
+                background-color: $background-color-3;
+            }
+            &::before{
+                background: $primary-color;
+                border-radius: 50%;
+                height: 1.5rem;
+                width:1.5rem;
+                left: -1rem;
+                overflow: hidden;
+                position: absolute;
+                align-items: center;
+                content: counter(gradient-counter);
+                display: flex;
+                justify-content: center;
+                z-index: 1;
+                color: $white-color;
+                font-size: smaller;
+            }
+            & img{
+                height: 1.3rem;
+                width: 1.1rem;
+                position: absolute;
+                left: 2rem;
+            }
+        }  
+    }
+} 
+  
+.restaurant{
+    @include box-flex-format(column);
+    height: 1226px;  
+    background-color: $background-color-2;
+    & h2{
+      align-self: flex-start;
+      margin-left: 1rem;
+      margin-top: 0;
+    }
+    &__card{
+      border-radius: 1rem;
+      @include box-shadow(0.1);
+      height: 250px;
+      background-color: white;
+      margin: 0.5rem 1rem;
+      position: relative;
+      overflow: hidden;
+      &--new::before{
+        @include newRestaurant();
+      }
+      & img{
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        width: 100%;
+        height: 70%;
+        object-position: 0 62%;
+      }
+      & img:not(.restaurant :nth-child(3) img){      
+        object-position: 0 108%;
+      }
+      &--bottomDescription{
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            padding-top: 0.7rem;
+            padding-left: 1rem;           
+            & .favHeart {  
+              font-size: 1.5rem;
+              width: 1.5rem;
+              position: relative;
+              cursor: pointer;
+              & > .far,.fas {
+                  position: absolute;
+              }
+              & .fas{
+                  opacity: 0;
+              }
+              &:hover .far{
+                  opacity: 0.5;
+                  & + .fas{        
+                    transition: opacity 0.3s ease-out;
+                    opacity: 1;
+                    color: $primary-color;
+                  }          
+              } 
+            }      
+            & h3{
+            margin:  0;
+            }
+            & span{
+            order: 1
+            }      
+        }
+    }
+}

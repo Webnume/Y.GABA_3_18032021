@@ -1,0 +1,25 @@
+header {
+    @include box-shadow(0.3);
+    @include box-flex-format(row);
+
+    height: 64px;  
+    z-index: 1;
+    
+    & svg {
+      width: 160px;
+      padding-top: 1rem;
+      position: relative;
+      & path{
+      fill: $black-color;
+      }
+    }
+
+    & .fas{
+      font-size: 1.2rem;
+      position: absolute;
+      left: 7%;
+      top: 28px;
+      @include links($black-color)
+      
+    }
+  }

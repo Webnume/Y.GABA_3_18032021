@@ -1,0 +1,40 @@
+@mixin box-flex-format($direction: row){
+    display:flex;
+    flex-direction: $direction;
+    justify-content:  center;
+    align-items: center;
+    width: 100%;
+    }
+  
+  @mixin box-shadow ($alpha: 0.5) {
+    box-shadow: 0px 0.5px 5px rgba($color: #000000, $alpha:$alpha); 
+  }
+  
+  @mixin newRestaurant (){
+    position: absolute;
+    padding: 0.5rem 0.8rem;
+    right: 3%;
+    top: 5%;
+    content: "Nouveau";
+    background-color: $third-color;
+    color: $black-color;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: bolder;
+  }
+  
+  @mixin links($color: $white-color) {
+    a {
+      color: $color;  
+      text-decoration: none;
+      &:visited {
+        color: $color;
+      }
+      &:hover {
+        color: $black-color;   
+      }
+      &:active {
+        color: $second-color;
+      }
+    }
+  }

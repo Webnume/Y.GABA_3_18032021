@@ -1,0 +1,106 @@
+main{  
+    @include box-flex-format(column);  
+    & .topBanner {
+        z-index: -1;  
+        & img {
+            width: 100%;
+            // object-position: 0 2px;            
+        }
+    }
+    & .container {
+        @include box-flex-format(column);
+        border-radius: 2.7rem 2.7rem 0 0;
+        margin-top: -47px;
+        background-color: $background-color-2;
+        & .topTitleFav{
+            @include box-flex-format;
+            justify-content: space-around;
+            margin-left: -1.3rem;
+            & h1{
+                font: 100% $font-logo-title;
+                font-size: 1.7rem;
+            }
+            & .favHeart {  
+                font-size: 1.5rem;
+                width: 1.5rem;
+                position: relative;
+                cursor: pointer;
+                top: -12px;
+                & > .far,.fas {
+                    position: absolute;
+                }
+                & .fas{
+                    opacity: 0;
+                }
+                &:hover .far{
+                    opacity: 0.5;
+                        & + .fas{        
+                        transition: opacity 0.3s ease-out;
+                        opacity: 1;
+                        color: $primary-color;
+                        }          
+                } 
+            }
+        } 
+        & .dishes{
+            @include box-flex-format(column);
+            align-items: unset;
+            padding: 0 1rem;
+            width: 90%;
+            & .dishes_type{              
+                &--title{
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    display: inline-block;
+                    width: 41px;
+                    & .borderBottom{
+                        border-bottom: 0.2rem solid $third-color;
+                        left: 50%;
+
+                    }
+                }
+                & .dishBox{
+                    background-color:$white-color;
+                    margin-bottom: 1rem;
+                    border-radius: 0.7rem;
+                    padding: 0.9rem;
+                    animation: animBox 0.8s ease-in-out both;
+                    @for $i from 1 through 3 {
+                        &--#{$i} {
+                            animation-delay: 0.3s + $i/4;
+                        }
+                    }
+                    & h3{
+                        margin: 0.2rem 0;
+                    }
+                    & .description{
+                        @include box-flex-format;
+                        justify-content: space-between;
+                        & h4{
+                            font-weight: 400;
+                            margin: 0;
+                        }
+                        & .price{
+                            font-weight: bold;
+                        }
+                                                
+                    }
+                }
+            }
+            
+        }                         
+        
+    }
+}
+
+@keyframes animBox {
+    0%{
+        opacity:0;
+        transform: translate(0,15px);
+    }
+    100%{
+        transform: translate(0);
+        opacity:1;
+    }
+}

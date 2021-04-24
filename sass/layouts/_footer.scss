@@ -1,0 +1,29 @@
+footer{
+    @include links();
+    @include box-flex-format(column);
+    justify-content: unset;
+    align-items: unset;  
+    height: 195px;  
+    background-color: $grey-footer;
+    color: $white-color;
+    & svg {
+      width: 7rem;
+      padding: 1rem 1.5rem;
+      & path{
+      fill:$white-color;
+      }
+    }
+    & ul{   
+      list-style: none;
+      margin: 0;
+      padding-left: 1.5rem;
+      line-height: 1.5rem;
+      & li:nth-child(1) img{
+          width: 0.7rem;
+          padding-right: 0.5rem;
+      }& li:nth-child(2) img{
+        width: 0.9rem;
+        padding-right: 0.3rem;
+    }
+    }
+  }
