@@ -2,6 +2,7 @@ body {
     font: 100% $text1;
     color: $black-color;
     min-width: 375px;
+    max-width: 900px;;
     margin: 0 auto;
     @include box-flex-format(column);
 }
@@ -10,3 +11,4 @@ main{
   width: 100%;
   @include links($black-color);
 }
+

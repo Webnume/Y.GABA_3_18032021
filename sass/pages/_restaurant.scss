@@ -1,16 +1,26 @@
 main{  
     @include box-flex-format(column);  
-    & .topBanner {
-        z-index: -1;  
-        & img {
+    
+    
+    & .topBanner { 
+        &--1 {
+            & img {
             width: 100%;
-            // object-position: 0 2px;            
+            object-position: 0 2px;
+            margin-bottom: -47px;            
+            }   
+        }
+        &--2 {
+            & img {
+            width: 100%;
+            object-position: 0 -96px;   
+            margin-bottom: -253px;          
+            }   
         }
     }
     & .container {
         @include box-flex-format(column);
         border-radius: 2.7rem 2.7rem 0 0;
-        margin-top: -47px;
         background-color: $background-color-2;
         & .topTitleFav{
             @include box-flex-format;
@@ -67,12 +77,10 @@ main{
                     padding: 0.9rem;
                     animation: animBox 0.8s ease-in-out both;
                             overflow: hidden;
-                    @for $i from 1 through 3 {
+                    @for $i from 1 through 4 {
                         &--#{$i} {
                             animation-delay: 0.2s + $i/8;
                             position: relative;
-
-
                             &:hover .check {
                                 transform: translate(-100px, 0);
                             }
@@ -89,6 +97,7 @@ main{
                     }
                     & h3{
                         margin: 0.2rem 0;
+                        width: 276px;
                     }
                     & .description{
                         @include box-flex-format;
@@ -128,6 +137,26 @@ main{
                         
                      
                     }
+            }
+            
+            & button{
+                @include box-shadow();
+                height: 50px;
+                width: 220px;
+                background: linear-gradient(355deg, $primary-color, $second-color);
+                border-style:none;
+                border-radius: 5rem;
+                color: $white-color;
+                font-size: 0.95rem;
+                font-weight: bolder;
+                transition: All 330ms ease-in-out ;
+                align-self: center;
+                margin: 2rem 0;
+          
+                &:hover{
+                  transform: scale(1.2);
+                  @include box-shadow(1);
+                }
             }
             
         }                         

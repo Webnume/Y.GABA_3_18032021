@@ -10,6 +10,19 @@ header {
   height: 64px;
   z-index: 1;
 }
+header a {
+  color: #000;
+  text-decoration: none;
+}
+header a:visited {
+  color: #000;
+}
+header a:hover {
+  color: #000;
+}
+header a:active {
+  color: #FF79DA;
+}
 header svg {
   width: 160px;
   padding-top: 1rem;
@@ -42,6 +55,7 @@ body {
   font: 100% "Roboto", sans-serif;
   color: #000;
   min-width: 375px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -84,7 +98,7 @@ footer a {
   text-decoration: none;
 }
 footer a:visited {
-  color: #fff;
+  color: #000;
 }
 footer a:hover {
   color: #000;
@@ -239,13 +253,24 @@ footer ul li:nth-child(2) img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 1226px;
   background-color: #f6f6f6;
+}
+@media (min-width: 599px) {
+  .restaurant {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 .restaurant h2 {
   align-self: flex-start;
   margin-left: 1rem;
   margin-top: 0;
+}
+@media (min-width: 599px) {
+  .restaurant h2 {
+    position: absolute;
+  }
 }
 .restaurant__card {
   border-radius: 1rem;
@@ -318,11 +343,15 @@ main {
   align-items: center;
   width: 100%;
 }
-main .topBanner {
-  z-index: -1;
-}
-main .topBanner img {
+main .topBanner--1 img {
   width: 100%;
+  object-position: 0 2px;
+  margin-bottom: -47px;
+}
+main .topBanner--2 img {
+  width: 100%;
+  object-position: 0 -96px;
+  margin-bottom: -253px;
 }
 main .container {
   display: flex;
@@ -331,7 +360,6 @@ main .container {
   align-items: center;
   width: 100%;
   border-radius: 2.7rem 2.7rem 0 0;
-  margin-top: -47px;
   background-color: #f6f6f6;
 }
 main .container .topTitleFav {
@@ -445,8 +473,25 @@ main .container .dishes .dishes_type .dishBox--3:hover .description h4 {
 main .container .dishes .dishes_type .dishBox--3:hover .fas {
   transform: rotate(360deg);
 }
+main .container .dishes .dishes_type .dishBox--4 {
+  animation-delay: 0.7s;
+  position: relative;
+}
+main .container .dishes .dishes_type .dishBox--4:hover .check {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--4:hover .price {
+  transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--4:hover .description h4 {
+  width: 60%;
+}
+main .container .dishes .dishes_type .dishBox--4:hover .fas {
+  transform: rotate(360deg);
+}
 main .container .dishes .dishes_type .dishBox h3 {
   margin: 0.2rem 0;
+  width: 276px;
 }
 main .container .dishes .dishes_type .dishBox .description {
   display: flex;
@@ -487,6 +532,24 @@ main .container .dishes .dishes_type .check .fas {
   color: #fff;
   font-size: 2rem;
   transition: transform 330ms ease-in-out;
+}
+main .container .dishes button {
+  box-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.5);
+  height: 50px;
+  width: 220px;
+  background: linear-gradient(355deg, #9356DC, #FF79DA);
+  border-style: none;
+  border-radius: 5rem;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: bolder;
+  transition: All 330ms ease-in-out;
+  align-self: center;
+  margin: 2rem 0;
+}
+main .container .dishes button:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0.5px 5px black;
 }
 
 @keyframes animBox {

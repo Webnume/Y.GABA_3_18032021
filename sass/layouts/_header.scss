@@ -1,6 +1,7 @@
 header {
     @include box-shadow(0.3);
     @include box-flex-format(row);
+    @include links($black-color);
 
     height: 64px;  
     z-index: 1;

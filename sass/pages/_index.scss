@@ -99,13 +99,21 @@
 } 
   
 .restaurant{
-    @include box-flex-format(column);
-    height: 1226px;  
+    @include box-flex-format(column); 
     background-color: $background-color-2;
+    @media (min-width: 599px) {
+      display: grid;
+      grid-template-columns: repeat(2 , 1fr);
+      grid-template-rows: repeat(2,1fr);
+}
     & h2{
       align-self: flex-start;
       margin-left: 1rem;
       margin-top: 0;
+      @media (min-width: 599px) {
+        position: absolute;
+  }
+
     }
     &__card{
       border-radius: 1rem;
@@ -159,6 +167,6 @@
             & span{
             order: 1
             }      
-        }
+      }
     }
 }
