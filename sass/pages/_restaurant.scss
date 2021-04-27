@@ -5,16 +5,20 @@ main{
     & .topBanner { 
         &--1 {
             & img {
-            width: 100%;
-            object-position: 0 2px;
-            margin-bottom: -47px;            
+                width: 100%;
+                object-position: 0 2px;
+                margin-bottom: -47px;            
             }   
         }
         &--2 {
             & img {
-            width: 100%;
-            object-position: 0 -96px;   
-            margin-bottom: -253px;          
+                width: 100%;
+                object-position: 0 -96px;   
+                margin-bottom: -253px;   
+                @media screen {                
+                    margin-bottom: -473px;                   
+                }       
+
             }   
         }
     }

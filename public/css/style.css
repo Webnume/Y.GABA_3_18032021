@@ -52,16 +52,19 @@ header .fas a:active {
 }
 
 body {
-  font: 100% "Roboto", sans-serif;
-  color: #000;
-  min-width: 375px;
-  max-width: 900px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  font: 100% "Roboto", sans-serif;
+  color: #000;
+  min-width: 375px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+body :not(.loader):not(.loader--container):not(.loader-inner):not(.filler) {
+  animation: animatebottom 3.2s ease-in-out;
 }
 
 main {
@@ -353,6 +356,11 @@ main .topBanner--2 img {
   object-position: 0 -96px;
   margin-bottom: -253px;
 }
+@media screen {
+  main .topBanner--2 img {
+    margin-bottom: -473px;
+  }
+}
 main .container {
   display: flex;
   flex-direction: column;
@@ -559,6 +567,89 @@ main .container .dishes button:hover {
   }
   100% {
     transform: translate(0);
+    opacity: 1;
+  }
+}
+.loader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  animation: loader-vanish 2s ease-in-out forwards;
+}
+.loader--container {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url(/pngtree-kniffe-fork-spoon-icon-png-image_3581494.svg);
+}
+.loader--container .loader-inner {
+  width: 100%;
+  height: 100%;
+  animation: loader-spin 0.5s linear infinite;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  border: 3px solid transparent;
+  border-right-color: #9356DC;
+  border-left-color: #FF79DA;
+  border-radius: 50%;
+}
+.loader--container .filler {
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #9356DC;
+  animation: plate-filler 2s ease-in-out;
+}
+
+@keyframes plate-filler {
+  0% {
+    transform: translate(0, 200px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes loader-vanish {
+  0%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@keyframes animatebottom {
+  0%, 90% {
+    top: -100%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
     opacity: 1;
   }
 }
