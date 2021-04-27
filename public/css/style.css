@@ -591,7 +591,7 @@ main .container .dishes button:hover {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: url(/pngtree-kniffe-fork-spoon-icon-png-image_3581494.svg);
+  background-image: url(../../icones/pngtree-kniffe-fork-spoon-icon-png-image_3581494.svg);
 }
 .loader--container .loader-inner {
   width: 100%;
