@@ -15,10 +15,9 @@ main{
                 width: 100%;
                 object-position: 0 -96px;   
                 margin-bottom: -253px;   
-                @media screen {                
-                    margin-bottom: -473px;                   
-                }       
-
+                @media (min-width: 657px) {
+                    margin-bottom: -473px;
+                }
             }   
         }
     }
@@ -29,32 +28,17 @@ main{
         & .topTitleFav{
             @include box-flex-format;
             justify-content: space-around;
-            margin-left: -1.3rem;
+            margin-left: -5.3rem;
+            position: relative;
+            &--shortTitle{
+                margin-left: -8.3rem;
+            }
             & h1{
                 font: 100% $font-logo-title;
                 font-size: 1.7rem;
             }
-            & .favHeart {  
-                font-size: 1.5rem;
-                width: 1.5rem;
-                position: relative;
-                cursor: pointer;
-                top: -12px;
-                & > .far,.fas {
-                    position: absolute;
-                }
-                & .fas{
-                    opacity: 0;
-                }
-                &:hover .far{
-                    opacity: 0.5;
-                        & + .fas{        
-                        transition: opacity 0.3s ease-out;
-                        opacity: 1;
-                        color: $primary-color;
-                        }          
-                } 
-            }
+            @include heartFav(32px,-2%);
+            
         } 
         & .dishes{
             @include box-flex-format(column);
@@ -80,7 +64,7 @@ main{
                     border-radius: 0.7rem;
                     padding: 0.9rem;
                     animation: animBox 0.8s ease-in-out both;
-                            overflow: hidden;
+                    overflow: hidden;
                     @for $i from 1 through 4 {
                         &--#{$i} {
                             animation-delay: 0.2s + $i/8;
@@ -143,25 +127,7 @@ main{
                     }
             }
             
-            & button{
-                @include box-shadow();
-                height: 50px;
-                width: 220px;
-                background: linear-gradient(355deg, $primary-color, $second-color);
-                border-style:none;
-                border-radius: 5rem;
-                color: $white-color;
-                font-size: 0.95rem;
-                font-weight: bolder;
-                transition: All 330ms ease-in-out ;
-                align-self: center;
-                margin: 2rem 0;
-          
-                &:hover{
-                  transform: scale(1.2);
-                  @include box-shadow(1);
-                }
-            }
+            @include buttonClassic; 
             
         }                         
         

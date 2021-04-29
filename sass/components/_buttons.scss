@@ -1,0 +1,50 @@
+@mixin buttonClassic{
+    & button{
+        @include box-shadow();
+        height: 50px;
+        width: 220px;
+        background: linear-gradient(355deg, $primary-color, $second-color);
+        border-style:none;
+        border-radius: 5rem;
+        color: $white-color;
+        font-size: 0.95rem;
+        font-weight: bolder;
+        margin-top: 1rem;
+        transition: All 330ms ease-in-out ;
+        align-self: center;
+        margin: 2rem 0;
+
+        &:hover{
+        transform: scale(1.2);
+        @include box-shadow(1);
+        }
+    }
+
+}
+
+
+@mixin heartFav ($top:0, $right:0) {
+    & .favHeart {  
+        font-size: 1.5rem;
+        width: 1.5rem;
+        position: absolute;
+        cursor: pointer;
+        top: $top;
+        right:$right;
+        & > .far,.fas {
+            position: absolute;
+        }
+        & .fas{
+            opacity: 0;
+        }
+        &:hover .far{
+            opacity: 0.5;
+                & + .fas{        
+                transition: opacity 0.3s ease-out;
+                opacity: 1;
+                color: $primary-color;
+                }          
+        } 
+    }
+    
+}

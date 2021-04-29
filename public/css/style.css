@@ -1,12 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
-header {
-  box-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.3);
+.loader {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  animation: loader-vanish 2s ease-in-out forwards;
+}
+.loader--container {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url(../../icones/pngtree-kniffe-fork-spoon-icon-png-image_3581494.svg);
+}
+.loader--container .loader-inner {
+  width: 100%;
+  height: 100%;
+  animation: loader-spin 0.5s linear infinite;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  border: 3px solid transparent;
+  border-right-color: #9356DC;
+  border-left-color: #FF79DA;
+  border-radius: 50%;
+}
+.loader--container .filler {
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background-color: #9356DC;
+  animation: plate-filler 2s ease-in-out;
+}
+
+@keyframes plate-filler {
+  0% {
+    transform: translate(0, 200px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes loader-vanish {
+  0%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@keyframes animatebottom {
+  0%, 90% {
+    top: -100%;
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+header {
+  box-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
   height: 64px;
   z-index: 1;
 }
@@ -36,6 +121,7 @@ header .fas {
   position: absolute;
   left: 7%;
   top: 28px;
+  margin-left: 1vh;
 }
 header .fas a {
   color: #000;
@@ -185,6 +271,8 @@ footer ul li:nth-child(2) img {
   font-weight: bolder;
   margin-top: 1rem;
   transition: All 330ms ease-in-out;
+  align-self: center;
+  margin: 2rem 0;
 }
 .localisation__exploreRestaurants button:hover {
   transform: scale(1.2);
@@ -257,12 +345,26 @@ footer ul li:nth-child(2) img {
   align-items: center;
   width: 100%;
   background-color: #f6f6f6;
+  padding: 2rem 0;
 }
-@media (min-width: 599px) {
+@media (min-width: 657px) {
   .restaurant {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+.restaurant .containerCardHeartFav {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 657px) {
+  .restaurant .containerCardHeartFav {
+    width: 40%;
+    margin: 1rem 2rem;
   }
 }
 .restaurant h2 {
@@ -270,9 +372,9 @@ footer ul li:nth-child(2) img {
   margin-left: 1rem;
   margin-top: 0;
 }
-@media (min-width: 599px) {
+@media (min-width: 657px) {
   .restaurant h2 {
-    position: absolute;
+    width: 100%;
   }
 }
 .restaurant__card {
@@ -307,36 +409,42 @@ footer ul li:nth-child(2) img {
   object-position: 0 108%;
 }
 .restaurant__card--bottomDescription {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-items: unset;
   padding-top: 0.7rem;
   padding-left: 1rem;
-}
-.restaurant__card--bottomDescription .favHeart {
-  font-size: 1.5rem;
-  width: 1.5rem;
-  position: relative;
-  cursor: pointer;
-}
-.restaurant__card--bottomDescription .favHeart > .far, .restaurant__card--bottomDescription .favHeart .fas {
-  position: absolute;
-}
-.restaurant__card--bottomDescription .favHeart .fas {
-  opacity: 0;
-}
-.restaurant__card--bottomDescription .favHeart:hover .far {
-  opacity: 0.5;
-}
-.restaurant__card--bottomDescription .favHeart:hover .far + .fas {
-  transition: opacity 0.3s ease-out;
-  opacity: 1;
-  color: #9356DC;
 }
 .restaurant__card--bottomDescription h3 {
   margin: 0;
 }
 .restaurant__card--bottomDescription span {
   order: 1;
+}
+.restaurant .favHeart {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+  cursor: pointer;
+  top: 199px;
+  right: 32px;
+}
+.restaurant .favHeart > .far, .restaurant .favHeart .fas {
+  position: absolute;
+}
+.restaurant .favHeart .fas {
+  opacity: 0;
+}
+.restaurant .favHeart:hover .far {
+  opacity: 0.5;
+}
+.restaurant .favHeart:hover .far + .fas {
+  transition: opacity 0.3s ease-out;
+  opacity: 1;
+  color: #9356DC;
 }
 
 main {
@@ -356,7 +464,7 @@ main .topBanner--2 img {
   object-position: 0 -96px;
   margin-bottom: -253px;
 }
-@media screen {
+@media (min-width: 657px) {
   main .topBanner--2 img {
     margin-bottom: -473px;
   }
@@ -377,7 +485,11 @@ main .container .topTitleFav {
   align-items: center;
   width: 100%;
   justify-content: space-around;
-  margin-left: -1.3rem;
+  margin-left: -5.3rem;
+  position: relative;
+}
+main .container .topTitleFav--shortTitle {
+  margin-left: -8.3rem;
 }
 main .container .topTitleFav h1 {
   font: 100% "Shrikhand", cursive;
@@ -386,9 +498,10 @@ main .container .topTitleFav h1 {
 main .container .topTitleFav .favHeart {
   font-size: 1.5rem;
   width: 1.5rem;
-  position: relative;
+  position: absolute;
   cursor: pointer;
-  top: -12px;
+  top: 32px;
+  right: -2%;
 }
 main .container .topTitleFav .favHeart > .far, main .container .topTitleFav .favHeart .fas {
   position: absolute;
@@ -551,6 +664,7 @@ main .container .dishes button {
   color: #fff;
   font-size: 0.95rem;
   font-weight: bolder;
+  margin-top: 1rem;
   transition: All 330ms ease-in-out;
   align-self: center;
   margin: 2rem 0;
@@ -567,89 +681,6 @@ main .container .dishes button:hover {
   }
   100% {
     transform: translate(0);
-    opacity: 1;
-  }
-}
-.loader {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  background-color: #fff;
-  width: 100%;
-  height: 100%;
-  animation: loader-vanish 2s ease-in-out forwards;
-}
-.loader--container {
-  position: relative;
-  overflow: hidden;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: url(../../icones/pngtree-kniffe-fork-spoon-icon-png-image_3581494.svg);
-}
-.loader--container .loader-inner {
-  width: 100%;
-  height: 100%;
-  animation: loader-spin 0.5s linear infinite;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  border: 3px solid transparent;
-  border-right-color: #9356DC;
-  border-left-color: #FF79DA;
-  border-radius: 50%;
-}
-.loader--container .filler {
-  position: absolute;
-  z-index: -1;
-  width: 200px;
-  height: 200px;
-  background-color: #9356DC;
-  animation: plate-filler 2s ease-in-out;
-}
-
-@keyframes plate-filler {
-  0% {
-    transform: translate(0, 200px);
-  }
-  100% {
-    transform: translate(0, 0px);
-  }
-}
-@keyframes loader-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
-@keyframes loader-vanish {
-  0%, 90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -2;
-  }
-}
-@keyframes animatebottom {
-  0%, 90% {
-    top: -100%;
-    opacity: 0;
-  }
-  100% {
-    top: 0;
     opacity: 1;
   }
 }

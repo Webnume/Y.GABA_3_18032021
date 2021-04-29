@@ -1,7 +1,8 @@
 header {
-    @include box-shadow(0.3);
+    @include box-shadow(0.2);
     @include box-flex-format(row);
     @include links($black-color);
+    position: relative;
 
     height: 64px;  
     z-index: 1;
@@ -20,7 +21,8 @@ header {
       position: absolute;
       left: 7%;
       top: 28px;
-      @include links($black-color)
+      @include links($black-color);
+      margin-left: 1vh;
       
     }
   }

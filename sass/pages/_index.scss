@@ -26,24 +26,7 @@
         text-align: center;
         font-size: large;
       }
-      button{
-        @include box-shadow();
-        height: 50px;
-        width: 220px;
-        background: linear-gradient(355deg, $primary-color, $second-color);
-        border-style:none;
-        border-radius: 5rem;
-        color: $white-color;
-        font-size: 0.95rem;
-        font-weight: bolder;
-        margin-top: 1rem;
-        transition: All 330ms ease-in-out ;
-  
-        &:hover{
-          transform: scale(1.2);
-          @include box-shadow(1);
-        }
-      }    
+      @include buttonClassic;    
     }
 }
   
@@ -101,20 +84,28 @@
 .restaurant{
     @include box-flex-format(column); 
     background-color: $background-color-2;
-    @media (min-width: 599px) {
-      display: grid;
-      grid-template-columns: repeat(2 , 1fr);
-      grid-template-rows: repeat(2,1fr);
-}
+    padding: 2rem 0;
+    @media (min-width: 657px) {
+      @include box-flex-format();
+      flex-wrap: wrap;
+    }
+    & .containerCardHeartFav{
+      position: relative;
+      width: 100%;
+      @media (min-width: 657px) {
+        width: 40%;
+        margin: 1rem 2rem;
+      }
+    }
     & h2{
       align-self: flex-start;
       margin-left: 1rem;
       margin-top: 0;
-      @media (min-width: 599px) {
-        position: absolute;
-  }
-
+      @media (min-width: 657px) {
+        width: 100%;
+      }   
     }
+    
     &__card{
       border-radius: 1rem;
       @include box-shadow(0.1);
@@ -122,7 +113,8 @@
       background-color: white;
       margin: 0.5rem 1rem;
       position: relative;
-      overflow: hidden;
+      overflow: hidden;      
+      
       &--new::before{
         @include newRestaurant();
       }
@@ -137,30 +129,10 @@
         object-position: 0 108%;
       }
       &--bottomDescription{
-            display: grid;
-            grid-template-columns: 5fr 1fr;
+            @include box-flex-format(column);
+            align-items: unset;
             padding-top: 0.7rem;
-            padding-left: 1rem;           
-            & .favHeart {  
-              font-size: 1.5rem;
-              width: 1.5rem;
-              position: relative;
-              cursor: pointer;
-              & > .far,.fas {
-                  position: absolute;
-              }
-              & .fas{
-                  opacity: 0;
-              }
-              &:hover .far{
-                  opacity: 0.5;
-                  & + .fas{        
-                    transition: opacity 0.3s ease-out;
-                    opacity: 1;
-                    color: $primary-color;
-                  }          
-              } 
-            }      
+            padding-left: 1rem;     
             & h3{
             margin:  0;
             }
@@ -168,5 +140,6 @@
             order: 1
             }      
       }
-    }
+    }           
+            @include heartFav(199px,32px); 
 }
