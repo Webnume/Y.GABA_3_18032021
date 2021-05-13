@@ -543,7 +543,7 @@ main .container .dishes .dishes_type .dishBox {
   margin-bottom: 1rem;
   border-radius: 0.7rem;
   padding: 0.9rem;
-  animation: animBox 0.8s ease-in-out both;
+  animation: animBox 4s ease-in-out both;
   overflow: hidden;
 }
 main .container .dishes .dishes_type .dishBox--1 {
@@ -675,7 +675,7 @@ main .container .dishes button:hover {
 }
 
 @keyframes animBox {
-  0% {
+  0%, 80% {
     opacity: 0;
     transform: translate(0, 15px);
   }
