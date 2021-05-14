@@ -405,9 +405,6 @@ footer ul li:nth-child(2) img {
   height: 70%;
   object-position: 0 62%;
 }
-.restaurant__card img:not(.restaurant .containerCardHeartFav:nth-child(3) img) {
-  object-position: 0% 108%;
-}
 .restaurant__card--bottomDescription {
   display: flex;
   flex-direction: column;
