@@ -126,7 +126,7 @@
         object-position: 0 62%;
       }
       & img:not(.restaurant :nth-child(3) img){      
-        object-position: 0 108%;
+        object-position: 0% 108%;
       }
       &--bottomDescription{
             @include box-flex-format(column);
