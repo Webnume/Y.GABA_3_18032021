@@ -125,9 +125,9 @@
         height: 70%;
         object-position: 0 62%;
       }
-      & img:not(.restaurant:nth-child(3) img){      
+      & img:not(section.restaurant > div:nth-child(3) > a > div > img){      
         object-position: 0% 108%;
-      }
+      } 
       &--bottomDescription{
             @include box-flex-format(column);
             align-items: unset;
