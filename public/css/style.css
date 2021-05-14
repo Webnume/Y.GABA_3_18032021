@@ -405,7 +405,7 @@ footer ul li:nth-child(2) img {
   height: 70%;
   object-position: 0 62%;
 }
-.restaurant__card img:not(.restaurant :nth-child(0n+3) img) {
+.restaurant__card img:not(.restaurant:nth-child(3) img) {
   object-position: 0% 108%;
 }
 .restaurant__card--bottomDescription {
