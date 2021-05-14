@@ -58,13 +58,14 @@ main{
 
                     }
                 }
-                & .dishBox{
+                & .dishBox{                    
                     background-color:$white-color;
                     margin-bottom: 1rem;
                     border-radius: 0.7rem;
                     padding: 0.9rem;
                     animation: animBox 4s ease-in-out both;
                     overflow: hidden;
+                    font-size: 88%;
                     @for $i from 1 through 4 {
                         &--#{$i} {
                             animation-delay: 0.2s + $i/8;
@@ -74,6 +75,9 @@ main{
                             }
                             &:hover .price {
                                 transform: translate(-100px, 0);
+                            }
+                            &:hover h3 {
+                                width: 60%;
                             }
                             &:hover .description h4 {
                                 width: 60%;
@@ -85,7 +89,12 @@ main{
                     }
                     & h3{
                         margin: 0.2rem 0;
-                        width: 276px;
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        transition: width 330ms ease-in-out;
+                        width: 100%;
                     }
                     & .description{
                         @include box-flex-format;
@@ -93,10 +102,10 @@ main{
                         & h4{
                             font-weight: 400;
                             margin: 0;
+                            width: 85%;
                             white-space: nowrap;
                             text-overflow: ellipsis;
                             overflow: hidden;
-                            width: 85%;
                             transition: width 330ms ease-in-out;
                             }
                         & .price{

@@ -542,6 +542,7 @@ main .container .dishes .dishes_type .dishBox {
   padding: 0.9rem;
   animation: animBox 4s ease-in-out both;
   overflow: hidden;
+  font-size: 88%;
 }
 main .container .dishes .dishes_type .dishBox--1 {
   animation-delay: 0.325s;
@@ -552,6 +553,9 @@ main .container .dishes .dishes_type .dishBox--1:hover .check {
 }
 main .container .dishes .dishes_type .dishBox--1:hover .price {
   transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--1:hover h3 {
+  width: 60%;
 }
 main .container .dishes .dishes_type .dishBox--1:hover .description h4 {
   width: 60%;
@@ -569,6 +573,9 @@ main .container .dishes .dishes_type .dishBox--2:hover .check {
 main .container .dishes .dishes_type .dishBox--2:hover .price {
   transform: translate(-100px, 0);
 }
+main .container .dishes .dishes_type .dishBox--2:hover h3 {
+  width: 60%;
+}
 main .container .dishes .dishes_type .dishBox--2:hover .description h4 {
   width: 60%;
 }
@@ -584,6 +591,9 @@ main .container .dishes .dishes_type .dishBox--3:hover .check {
 }
 main .container .dishes .dishes_type .dishBox--3:hover .price {
   transform: translate(-100px, 0);
+}
+main .container .dishes .dishes_type .dishBox--3:hover h3 {
+  width: 60%;
 }
 main .container .dishes .dishes_type .dishBox--3:hover .description h4 {
   width: 60%;
@@ -601,6 +611,9 @@ main .container .dishes .dishes_type .dishBox--4:hover .check {
 main .container .dishes .dishes_type .dishBox--4:hover .price {
   transform: translate(-100px, 0);
 }
+main .container .dishes .dishes_type .dishBox--4:hover h3 {
+  width: 60%;
+}
 main .container .dishes .dishes_type .dishBox--4:hover .description h4 {
   width: 60%;
 }
@@ -609,7 +622,12 @@ main .container .dishes .dishes_type .dishBox--4:hover .fas {
 }
 main .container .dishes .dishes_type .dishBox h3 {
   margin: 0.2rem 0;
-  width: 276px;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: width 330ms ease-in-out;
+  width: 100%;
 }
 main .container .dishes .dishes_type .dishBox .description {
   display: flex;
@@ -622,10 +640,10 @@ main .container .dishes .dishes_type .dishBox .description {
 main .container .dishes .dishes_type .dishBox .description h4 {
   font-weight: 400;
   margin: 0;
+  width: 85%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 85%;
   transition: width 330ms ease-in-out;
 }
 main .container .dishes .dishes_type .dishBox .description .price {
