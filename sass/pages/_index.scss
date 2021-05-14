@@ -125,7 +125,7 @@
         height: 70%;
         object-position: 0 62%;
       }
-      & img:not(.restaurant :nth-child(3) img){      
+      & img:not(.restaurant :nth-child(0n+3) img){      
         object-position: 0% 108%;
       }
       &--bottomDescription{
