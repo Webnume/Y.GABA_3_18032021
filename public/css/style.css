@@ -5,7 +5,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -173,8 +172,6 @@ main a:active {
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   justify-content: unset;
   align-items: unset;
@@ -228,7 +225,6 @@ footer ul li:nth-child(2) img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   width: 100%;
   font-weight: bolder;
   height: 65px;
@@ -269,7 +265,6 @@ footer ul li:nth-child(2) img {
   color: #fff;
   font-size: 0.95rem;
   font-weight: bolder;
-  margin-top: 1rem;
   transition: All 330ms ease-in-out;
   align-self: center;
   margin: 2rem 0;
@@ -283,7 +278,6 @@ footer ul li:nth-child(2) img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   align-items: unset;
   height: 440px;
@@ -409,7 +403,6 @@ footer ul li:nth-child(2) img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   align-items: unset;
   padding-top: 0.7rem;
@@ -478,7 +471,6 @@ main .container {
 main .container .topTitleFav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   width: 100%;
   justify-content: space-around;
@@ -518,8 +510,6 @@ main .container .dishes {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
   align-items: unset;
   padding: 0 1rem;
   width: 90%;
@@ -632,7 +622,6 @@ main .container .dishes .dishes_type .dishBox h3 {
 main .container .dishes .dishes_type .dishBox .description {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   width: 100%;
   justify-content: space-between;
@@ -655,7 +644,6 @@ main .container .dishes .dishes_type .check {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
   background-color: #99E2D0;
   position: absolute;
   top: 0;
@@ -679,7 +667,6 @@ main .container .dishes button {
   color: #fff;
   font-size: 0.95rem;
   font-weight: bolder;
-  margin-top: 1rem;
   transition: All 330ms ease-in-out;
   align-self: center;
   margin: 2rem 0;
