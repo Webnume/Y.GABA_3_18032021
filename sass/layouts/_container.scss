@@ -3,7 +3,7 @@ body{
     font: 100% $text1;
     color: $black-color;
     min-width: 375px;
-    max-width: 900px;;
+    max-width: 900px;
     margin: 0 auto;
     & :not(.loader):not(.loader--container):not(.loader-inner):not(.filler){
       animation: animatebottom 3.2s ease-in-out;

@@ -34,8 +34,8 @@
   bottom: 0;
   display: block;
   border: 3px solid transparent;
-  border-right-color: #9356DC;
-  border-left-color: #FF79DA;
+  border-right-color: #9356dc;
+  border-left-color: #ff79da;
   border-radius: 50%;
 }
 .loader--container .filler {
@@ -43,7 +43,7 @@
   z-index: -1;
   width: 200px;
   height: 200px;
-  background-color: #9356DC;
+  background-color: #9356dc;
   animation: plate-filler 2s ease-in-out;
 }
 
@@ -64,7 +64,8 @@
   }
 }
 @keyframes loader-vanish {
-  0%, 90% {
+  0%,
+  90% {
     opacity: 1;
   }
   100% {
@@ -73,7 +74,8 @@
   }
 }
 @keyframes animatebottom {
-  0%, 90% {
+  0%,
+  90% {
     top: -100%;
     opacity: 0;
     height: 0;
@@ -105,7 +107,7 @@ header a:hover {
   color: #000;
 }
 header a:active {
-  color: #FF79DA;
+  color: #ff79da;
 }
 header svg {
   width: 160px;
@@ -133,7 +135,7 @@ header .fas a:hover {
   color: #000;
 }
 header .fas a:active {
-  color: #FF79DA;
+  color: #ff79da;
 }
 
 body {
@@ -152,9 +154,6 @@ body :not(.loader):not(.loader--container):not(.loader-inner):not(.filler) {
   animation: animatebottom 3.2s ease-in-out;
 }
 
-main {
-  width: 100%;
-}
 main a {
   color: #000;
   text-decoration: none;
@@ -166,7 +165,7 @@ main a:hover {
   color: #000;
 }
 main a:active {
-  color: #FF79DA;
+  color: #ff79da;
 }
 
 footer {
@@ -190,7 +189,7 @@ footer a:hover {
   color: #000;
 }
 footer a:active {
-  color: #FF79DA;
+  color: #ff79da;
 }
 footer svg {
   width: 7rem;
@@ -259,7 +258,7 @@ footer ul li:nth-child(2) img {
   box-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.5);
   height: 50px;
   width: 220px;
-  background: linear-gradient(355deg, #9356DC, #FF79DA);
+  background: linear-gradient(355deg, #9356dc, #ff79da);
   border-style: none;
   border-radius: 5rem;
   color: #fff;
@@ -310,7 +309,7 @@ footer ul li:nth-child(2) img {
   background-color: #f5edff;
 }
 .presentation__list > li::before {
-  background: #9356DC;
+  background: #9356dc;
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
@@ -386,7 +385,7 @@ footer ul li:nth-child(2) img {
   right: 3%;
   top: 5%;
   content: "Nouveau";
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #000;
   border-radius: 0.2rem;
   font-size: 0.9rem;
@@ -422,7 +421,8 @@ footer ul li:nth-child(2) img {
   top: 199px;
   right: 32px;
 }
-.restaurant .favHeart > .far, .restaurant .favHeart .fas {
+.restaurant .favHeart > .far,
+.restaurant .favHeart .fas {
   position: absolute;
 }
 .restaurant .favHeart .fas {
@@ -434,7 +434,7 @@ footer ul li:nth-child(2) img {
 .restaurant .favHeart:hover .far + .fas {
   transition: opacity 0.3s ease-out;
   opacity: 1;
-  color: #9356DC;
+  color: #9356dc;
 }
 
 main {
@@ -492,7 +492,8 @@ main .container .topTitleFav .favHeart {
   top: 32px;
   right: -2%;
 }
-main .container .topTitleFav .favHeart > .far, main .container .topTitleFav .favHeart .fas {
+main .container .topTitleFav .favHeart > .far,
+main .container .topTitleFav .favHeart .fas {
   position: absolute;
 }
 main .container .topTitleFav .favHeart .fas {
@@ -504,7 +505,7 @@ main .container .topTitleFav .favHeart:hover .far {
 main .container .topTitleFav .favHeart:hover .far + .fas {
   transition: opacity 0.3s ease-out;
   opacity: 1;
-  color: #9356DC;
+  color: #9356dc;
 }
 main .container .dishes {
   display: flex;
@@ -522,7 +523,7 @@ main .container .dishes .dishes_type--title {
   width: 41px;
 }
 main .container .dishes .dishes_type--title .borderBottom {
-  border-bottom: 0.2rem solid #99E2D0;
+  border-bottom: 0.2rem solid #99e2d0;
   left: 50%;
 }
 main .container .dishes .dishes_type .dishBox {
@@ -644,7 +645,7 @@ main .container .dishes .dishes_type .check {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   position: absolute;
   top: 0;
   right: -100px;
@@ -661,7 +662,7 @@ main .container .dishes button {
   box-shadow: 0px 0.5px 5px rgba(0, 0, 0, 0.5);
   height: 50px;
   width: 220px;
-  background: linear-gradient(355deg, #9356DC, #FF79DA);
+  background: linear-gradient(355deg, #9356dc, #ff79da);
   border-style: none;
   border-radius: 5rem;
   color: #fff;
@@ -677,7 +678,8 @@ main .container .dishes button:hover {
 }
 
 @keyframes animBox {
-  0%, 80% {
+  0%,
+  80% {
     opacity: 0;
     transform: translate(0, 15px);
   }
